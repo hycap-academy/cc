@@ -2,38 +2,35 @@
 f = open("poker.dat", "r")
 
 #Get the number of sets
-strNum = f.readline()
-intNum = int(strNum)
+intNum = int(f.readline().strip())
 
 # loop through the sets
 for x in range(0, intNum):
+    # create a dictionary of cards that are in the hand.  The key is cardvalue.  (e.g. A, 2, 3, 4, etc)
+    # The value is the number of those cards we are holding
+    dictCard = {}
 
-    correct = int(f.readline())
- 
-    me=f.readline()
-    friend = f.readline()
+    # cards is an array of cards we are holding.  We strip then split after reading from the file.
+    cards = f.readline().strip().split()
 
-    incorrect = len(me) - correct
+    # loop through each card in the card array.
+    for card in cards:
 
-    maxCorrect = 0
-
-    same = 0
-    different = 0
-
-    for i in range(0, len(me)):
-        if me[i]==friend[i]:
-            same +=1
+        # if the cardvalue is in dictCard already, then increment the value by 1
+        # Otherwise, create a new entry for the card value and set it to 1 
+        if card[0] in dictCard:
+            dictCard[card[0]] +=1
         else:
-            different +=1
-
-    if same > correct:
-        maxCorrect=correct
-    else:
-        maxCorrect=same
-
-    if different > incorrect:
-        maxCorrect+=incorrect
-    else:
-        maxCorrect += different
-
-    print(maxCorrect)
+            dictCard[card[0]] = 1
+    
+    # set a variable to track the highest value in the dictionary
+    maxStrength = 0
+    # loop through the dictionary
+    for key, value in dictCard.items():
+        # if the value of the dictionary is higher than what is held
+        # in maxStrength, then assign value to maxStrength
+        if value > maxStrength:
+            maxStrength = value
+    
+    # print the highest strength number
+    print(maxStrength)
