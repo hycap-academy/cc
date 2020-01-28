@@ -1,12 +1,9 @@
 
-# The purpose of this function is to check if another word can be formed with 
-# the remaining letters in the sentence.
-# For instance if "i" and "in" are in the words array, then there would be a problem
-# if the sentence was:
+# The purpose of this function is to check if another word can be formed with the remaining letters in the sentence.
+# For instance if "i" and "in" are in the words array, then there would be a problem if the sentence was:
 # thenowisnothing
-# because it would recognize "i" as a word and leave snothing as the remainder of the sentence.
-# This function checks to see if the next set of letters will also create a word in the words array
-# If so, it'll return True.  Else false.
+# because it would recognize "i" as a word and leave snothing as the remainder of the sentence.  This function checks 
+# to see if the next set of letters will also create a word in the words array.  If so, it'll return True.  Else false.
 
 def findNextWord(sentence, words):
     # Create a word using the currentword variable by going to the remaining
@@ -26,11 +23,7 @@ def findNextWord(sentence, words):
     # then return False
     return False
 
-
-###################################
 ###   Start the main program    ###
-###################################
-
 # open file
 f = open("spaces.dat", "r")
 

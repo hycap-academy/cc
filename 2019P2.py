@@ -14,7 +14,6 @@ for i in range(0, intNum):
     strNumOfFriends = f.readline()
     intNumOfFriends = int(strNumOfFriends)
 
-
     # create a variable for the highest number ranking
     # start it at 0 for now.
     maxNum = 0
@@ -32,7 +31,6 @@ for i in range(0, intNum):
         # convert it and store it in an int variable
         intIndex = int(AryFriend[1])
 
-        
         # if the intIndex is more than maxNum, then reset maxNum to intIndex
         # we are trying to find the largest number ranking
         if intIndex > maxNum:

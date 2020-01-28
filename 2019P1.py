@@ -1,4 +1,3 @@
-
 #Open file
 f = open("clothes.dat", "r")
 
@@ -41,7 +40,6 @@ for i in range(0, intNum):
             pants.append(item)
         elif itemType=="(socks)":
             socks.append(item)
-
 
     #Find the minimum number of items in the 3 lists.  
     #The instructions says that we should print out until clothes runs out
